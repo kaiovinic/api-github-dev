@@ -9,7 +9,7 @@ function Profile() {
     <Container>
       <Header>
         <Avatar src="https://avatars.githubusercontent.com/u/105761498?v=4" />
-        <Login>kaioVinic</Login>
+        <Login>kaiovinic</Login>
         <Name>Kaio Vinicius</Name>
       </Header>
       <Inner>
