@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Sidebar, Main } from "./styles";
 import Profile from "./Profile";
 import Filter from "./Filter";
@@ -6,6 +6,8 @@ import Repositories from "./Repositories";
 import { getLangsFrom } from "../../services/api";
 
 function RepositoriesPages() {
+  const [currentLanguage, setCurrentLanguage] = useState();
+
   const user = {
     login: "kaiovinic",
     name: "Kaio",
@@ -64,11 +66,19 @@ function RepositoriesPages() {
 
   const languages = getLangsFrom(repositories);
 
+  const onFilterClick = (language) => {
+    setCurrentLanguage(language);
+  };
+
   return (
     <Container>
       <Sidebar>
         <Profile user={user} />
-        <Filter languages={languages} />
+        <Filter
+          languages={languages}
+          currentLanguage={currentLanguage}
+          onClick={onFilterClick}
+        />
       </Sidebar>
       <Main>
         <Repositories repositories={repositories} />
