@@ -1,23 +1,38 @@
-import React, { useState } from "react";
-import { Container, Sidebar, Main } from "./styles";
+import React, { useState, useEffect } from "react";
+import { Loading, Container, Sidebar, Main } from "./styles";
 import Profile from "./Profile";
 import Filter from "./Filter";
 import Repositories from "./Repositories";
-import { getLangsFrom } from "../../services/api";
+import { getLangsFrom, getUser } from "../../services/api";
 
 function RepositoriesPages() {
+  const [user, setUser] = useState();
   const [currentLanguage, setCurrentLanguage] = useState();
+  const [loading, setLoading] = useState(true);
 
-  const user = {
-    login: "kaiovinic",
-    name: "Kaio",
-    avatar_url: "https://avatars.githubusercontent.com/u/105761498?v=4",
-    followers: 0,
-    following: 0,
-    company: null,
-    blog: "",
-    location: "SALVADOR-BA",
-  };
+  useEffect(() => {
+    const loadData = async () => {
+      // getUser();
+
+      const [userResponse] = await Promise.all([getUser("kaiovinic")]);
+
+      setUser(userResponse.data);
+
+      setLoading(false);
+    };
+    loadData();
+  }, []);
+
+  // const user = {
+  //   login: "kaiovinic",
+  //   name: "Kaio",
+  //   avatar_url: "https://avatars.githubusercontent.com/u/105761498?v=4",
+  //   followers: 0,
+  //   following: 0,
+  //   company: null,
+  //   blog: "",
+  //   location: "SALVADOR-BA",
+  // };
 
   const repositories = [
     {
@@ -69,6 +84,10 @@ function RepositoriesPages() {
   const onFilterClick = (language) => {
     setCurrentLanguage(language);
   };
+
+  if (loading) {
+    return <Loading>Carregando...</Loading>;
+  }
 
   return (
     <Container>
