@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { Loading, Container, Sidebar, Main } from "./styles";
 import Profile from "./Profile";
 import Filter from "./Filter";
@@ -6,6 +7,8 @@ import Repositories from "./Repositories";
 import { getUser, getRepos, getLangsFrom } from "../../services/api";
 
 function RepositoriesPages() {
+  const { login } = useParams();
+
   const [user, setUser] = useState();
   const [repositories, setRepositories] = useState();
   const [languages, setLanguages] = useState();
@@ -17,8 +20,8 @@ function RepositoriesPages() {
       // getUser();
 
       const [userResponse, repositoriesResponse] = await Promise.all([
-        getUser("kaiovinic"),
-        getRepos("kaiovinic"),
+        getUser(login),
+        getRepos(login),
       ]);
 
       setUser(userResponse.data);
