@@ -4,12 +4,12 @@ export const Loading = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
 `;
 
 export const Container = styled.main`
   display: flex;
   min-height: 100vh;
+  margin-bottom: 50px;
 
   @media screen and (max-width: ${(props) => props.theme.breakpoints.md}) {
     flex-direction: column;

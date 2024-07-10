@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 import { Container, Selector, Cleaner } from "./styles";
 
@@ -20,6 +21,9 @@ function Filter({ languages, currentLanguage, onClick }) {
     <Container>
       {selectors}
       <Cleaner onClick={() => onClick && onClick(undefined)}>Limpar</Cleaner>
+      <Link to="/">
+        <Cleaner>Voltar para a Página Inicial</Cleaner>
+      </Link>
     </Container>
   );
 }

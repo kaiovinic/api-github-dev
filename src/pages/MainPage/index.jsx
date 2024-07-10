@@ -7,12 +7,14 @@ import githubLogo from "../../assets/images/github-logo.svg";
 
 function MainPage() {
   const [login, setLogin] = useState("");
+
   return (
     <Container>
       <Logo src={githubLogo} alt="API Github" />
       <Title>API Github</Title>
       <Form>
         <Input
+          type="text"
           placeholder="usuário"
           value={login}
           onChange={(event) => setLogin(event.target.value)}
