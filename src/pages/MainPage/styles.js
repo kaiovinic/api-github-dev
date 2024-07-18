@@ -51,7 +51,7 @@ export const Button = styled(Link)`
   background: transparent;
   color: white;
   width: 80px;
-  height: 54px;
+  height: 64px;
   border: 3px solid ${(props) => props.theme.colors.white};
   transition: background 0.3s;
 

@@ -6,11 +6,18 @@ const api = axios.create({
 });
 
 export const getUser = async (login) => api.get(`/users/${login}`);
+
 export const getRepos = async (login) => api.get(`/users/${login}/repos`);
 
 export default api;
 
 export const getLangsFrom = (repositories) => {
+  if (!Array.isArray(repositories) || repositories.length === 0) {
+    console.warn(
+      "Nenhum repositório encontrado ou lista de repositórios vazia"
+    );
+    return [];
+  }
   let stats = repositories
     .map((repository) => repository.language)
     .reduce(

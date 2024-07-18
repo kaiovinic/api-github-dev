@@ -4,7 +4,7 @@ export const Container = styled.div`
   display: grid;
   grid-template-columns: auto;
   gap: 0.2rem;
-  margin: 1 auto;
+  margin: 1rem auto;
   padding-right: 2rem;
 
   @media screen and (max-width: ${(props) => props.theme.breakpoints.md}) {
@@ -58,6 +58,6 @@ export const Cleaner = styled.button`
 
   @media screen and (max-width: ${(props) => props.theme.breakpoints.md}) {
     text-align: center;
-    padding: 0 1rem;
+    padding: 1rem 1rem;
   }
 `;
