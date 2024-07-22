@@ -9,7 +9,7 @@ export const Loading = styled.div`
 export const Container = styled.main`
   display: flex;
   min-height: 100vh;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 
   @media screen and (max-width: ${(props) => props.theme.breakpoints.md}) {
     flex-direction: column;
