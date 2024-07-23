@@ -9,6 +9,7 @@ export const Loading = styled.div`
 export const Container = styled.main`
   display: flex;
   min-height: 100vh;
+
   margin-bottom: 50px;
 
   @media screen and (max-width: ${(props) => props.theme.breakpoints.md}) {
@@ -26,9 +27,9 @@ export const Sidebar = styled.aside`
 export const Main = styled.section`
   background: ${(props) => props.theme.colors.container};
   width: 100%;
-  height: 100vh;
+  height: 100%;
   overflow-y: hidden;
-  padding: 40px;
+  padding: 50px;
 
   @media screen and (max-width: ${(props) => props.theme.breakpoints.md}) {
     height: 100%;
