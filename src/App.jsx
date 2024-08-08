@@ -7,12 +7,14 @@ import { AppRoutes } from "./routes";
 
 import { GlobalStyle } from "./styles/global";
 import { Theme } from "./styles/Theme";
+import Footer from "./components/Footer";
 
 export default function App() {
   return (
     <BrowserRouter>
       <Theme>
         <AppRoutes />
+        <Footer />
         <GlobalStyle />
         <Normalize />
       </Theme>
