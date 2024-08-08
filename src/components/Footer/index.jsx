@@ -11,7 +11,7 @@ function Footer() {
           target="_blank"
           rel="noreferrer"
         >
-          <span>Kaio Vinicius </span>
+          <span>KAIO VINICIUS </span>
         </Link>
         - TODOS OS DIREITOS RESERVADOS.
       </Text>
